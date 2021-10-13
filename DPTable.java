@@ -10,7 +10,7 @@ Builds the DP Table
  */
 
 
-public class BFTable {
+public class DPTable {
     int R; // R is length, not last index, so decrement
     int C;
     int[][] arr;

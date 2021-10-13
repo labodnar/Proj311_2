@@ -22,7 +22,7 @@ Driver Class that exercises the DP model
         String s2 = "";
         int j;
 
-        BFTable table = new BFTable();
+        DPTable table = new DPTable();
         BruteForce bruteForce = new BruteForce();
 
         if (!BATCH_RUN) {
