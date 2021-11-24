@@ -1,4 +1,5 @@
 package com.company.Proj311_2;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 public class Driver {
 
@@ -15,12 +16,14 @@ Driver Class that exercises the DP model
 
         boolean BATCH_RUN = true;
 
-        int[] coins = {2, 5, 7, 9};
+        int[] coins = {3, 5, 7, 19};
         int targetSum = 33;
-        long tDynProg, tBruteForce;
+        long tDynProg, tBruteForce = 0;
         String s = "";
         String s2 = "";
         int j;
+        DecimalFormat ft = new DecimalFormat("####,###");
+
 
         DPTable table = new DPTable();
         BruteForce bruteForce = new BruteForce();
@@ -37,12 +40,13 @@ Driver Class that exercises the DP model
             String s_dash = "-";
             System.out.println(s_dash.repeat(100));
 
-            for (int i = 10; i < 16; i+=1) {
+            for (int i = 4; i < 1600000; i+=31) {
+
                 tDynProg = table.makeTable(coins, i);
                 table.findSequence();
                 tBruteForce = bruteForce.bfCombos(coins, i);
-                s = "\t" + i + ":" + "\t";
-                s2 = "\t\t" + table.v;
+                s = "\t" + ft.format(i) + ":" + "\t";
+                s2 = "\t\t" + table.vString();
                 System.out.print(s + tDynProg + ", " + tBruteForce + s2 + "\n");
             }
         }

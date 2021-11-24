@@ -35,6 +35,14 @@ public class DPTable {
         }
     }
 
+    public String vString() {
+        String v = this.v.toString();
+        int max_len = 100;
+        if (v.length()>max_len) v = v.substring(0, max_len);
+        return v;
+    }
+
+
 
     private int getCoin (){
         while (currRow > 0) {
